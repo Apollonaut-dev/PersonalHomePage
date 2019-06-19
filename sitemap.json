@@ -1,0 +1,40 @@
+{	// PAGES //
+	"/":{
+		"type":"text/html",
+		"target":"/view/html/about.html"
+	},
+	"/about.html":{
+		"type":"text/html",
+		"target":"/view/html/about.html"
+	},
+	"/resume.html":{
+		"type":"text/html",
+		"target":"/view/html/resume.html"
+	},
+	"/projects.html":{
+		"type":"text/html",
+		"target":"/view/html/projects.html"
+	},
+	"/thinkery.html":{
+		"type":"text/html",
+		"target":"/view/html/thinkery.html"
+	},
+	"/contact.html":{
+		"type":"text/html",
+		"target":"/view/html/contact.html"
+	},
+	"/404.html":{
+		"type": "text/html",
+		"target": "/view/html/404.html"
+	},
+	// CSS //
+	"/css/main.css":{
+		"type":"text/css",
+		"target":"/view/css/main.css"
+	},
+	// ASSETS //
+	"/menu.svg":{
+		"type":"image/svg+xml",
+		"target":"/view/assets/menu.svg"
+	}
+}

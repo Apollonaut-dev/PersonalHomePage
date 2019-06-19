@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- SEO STUFF -->
+		<meta name="description" content="Anthony's Personal Homepage">
+		<meta name="keywords" content="web design, web developer, freelance, for hire, student">
+		<meta name="author" content="Anthony de Vellis">
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<title>Anthony De Vellis</title>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<figure id="header-synopsis">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Circle_%28transparent%29.png/600px-Circle_%28transparent%29.png" alt="HTML5" />
+					<figcaption id="synopsis">
+						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="">Source code</a>
+					</figcaption>
+				</figure>
+				<nav id="nav-primary">
+					<ul id="navlinks">
+						<li><a id="nav-about" href="/about.com" class="button button-nav">About</a></li>
+						<li><a id="nav-resume" href="/resume.html" class="button button-nav">Resume</a></li>
+						<li><a id="nav-projects" href="/projects.html" class="button button-nav active">Projects</a></li>
+						<li><a id="nav-thinkery" href="/thinkery.html" class="button button-nav inactive">Thinkery</a></li>
+						<li><a id="nav-contact" href="/contact.html" class="button button-nav">Contact</a></li>
+					</ul>
+					<div class="menu-icon-highlight mobile">
+						<!-- <img src="/menu.svg" alt="HTML"> -->
+						<div class="menu-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section id="about" class="resume">
+				<div class="container">
+					<article> 
+						<h3>Article</h3>
+						<p>
+
+						</p>
+					</article>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="container">
+				<p>Anthony de Vellis &copy; 2019</p>
+			</div>
+		</footer>
+		<script>
+			/* page initialization */
+			(function() {
+
+			})();
+
+			function nav_active() {
+
+				
+				var navs = document.getElementById("navlinks").childNodes;
+				// every other object in this list is innertext, the odd numbers are elements
+				for ( let i = 1; i < navs.length; i += 2 ) {
+					navs.item(i).className.replace(" active", " inactive");
+				}
+
+				// this.className.replace(" inactive", " active");
+			}
+		</script>
+	</body>
