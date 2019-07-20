@@ -1,4 +1,4 @@
-{	// PAGES //
+{	
 	"/":{
 		"type":"text/html",
 		"target":"/view/html/about.html"
@@ -27,14 +27,16 @@
 		"type": "text/html",
 		"target": "/view/html/404.html"
 	},
-	// CSS //
 	"/css/main.css":{
 		"type":"text/css",
 		"target":"/view/css/main.css"
 	},
-	// ASSETS //
 	"/menu.svg":{
 		"type":"image/svg+xml",
 		"target":"/view/assets/menu.svg"
+	},
+	"/favicon.ico":{
+		"type":"image/svg+xml",
+		"target":"/view/assets/favicon.ico"
 	}
 }

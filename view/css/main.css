@@ -1,3 +1,12 @@
+/* TODO
+@fix header; make height absolute, sidebar span the entire vertical height
+@fix menu on click; browser doesn't update CSS gotta do it in JS
+@add CONTENT
+@animate sidebar on burger click
+@animate burger on burger click
+
+*/
+
 :root {
 	--background: rgba(16, 16, 16, 1);
 	--headerbackground: rgba(80, 40, 160, 1);
@@ -39,14 +48,18 @@ header {
 	position: relative;
 	background: var(--headerbackground);
 	color: white;
-	padding-top: 2rem;
+	padding-top: 1rem;
 	text-align: center;
 	justify-content: center;
 }
 
+#mobile-nav-button {
+	display: none;
+}
+
 #header-synopsis {
 	display: block;
-	padding: 1rem;
+	padding-top: 1rem;
 }
 
 #header-synopsis img {
@@ -67,7 +80,7 @@ header {
 
 #header-synopsis:hover figcaption {
 	opacity: 100;
-	padding: 1.0rem;
+	padding: 1rem;
 	transform: scale(1);
 }
 
@@ -84,6 +97,7 @@ header nav {
 
 header nav ul {
 	display: block;
+	width: 100%;
 	list-style-type: none;
 }
 
@@ -92,6 +106,7 @@ header nav ul {
 }
 
 #nav-primary li a {
+	
 	text-decoration: none;
 	font-size: 1.1rem;
 	padding: 0.2rem 1rem;
@@ -115,9 +130,10 @@ header nav ul {
 	header {
 		display: block;
 		width: 100%;
+		height: 130px;
 		position: relative;
 		color: white;
-		padding: 0;
+		padding: 0.5rem 0;
 	}
 
 	/* FIGURE */
@@ -128,20 +144,22 @@ header nav ul {
 
 	#header-synopsis img {
 		display: inline-block;
+		margin-right: 1.5rem;
+		vertical-align: middle;
 		height: 80px;
 		width: 80px;
 	}
 	
 	#header-synopsis figcaption {
-		display: table-caption;
-		caption-side: right;
-		width: 50vw;
-		opacity: 100;
 		transform: initial;
 		transition: initial;
-		text-align: left;
+		display: table-cell;
+		caption-side: right;
 		vertical-align: middle;
-		font-size: 1rem;
+		width: 50vw;
+		opacity: 100;
+		text-align: left;
+		font-size: 0.8rem;
 	}
 
 	#header-synopsis:hover figcaption {
@@ -151,68 +169,86 @@ header nav ul {
 	}
 
 	/* NAV */
-
-	button#mobile-nav-button {
-		display: inline;
+	#mobile-nav-button {
+		display: inline-block;
+		background: none;
+		border: 1px black;
+		/*border: 1px solid black;*/
 		position: absolute;
 		/* the next two lines is a vertical centering trick */
 		top: 50%;
 		transform: translateY(-50%);
 		right: 2rem;
 		vertical-align: middle;
-		height: 3rem;
+		/*height: 3rem;*/
 		width: 4rem;
+		transition: background 0.3s;
+		-moz-transition: background;
 	}	
+
+	#mobile-nav-button .hamburger-container {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+	}
+
+	#mobile-nav-button .hamburger-container span {
+		display: block;
+		border: 0.15rem solid white;
+		border-radius: 0.2rem;
+		margin: 0.75rem 0.5rem;
+	}
+
+	/* useful trick: no space between classes = logical AND; space = descendant class*/
+	#mobile-nav-button.active {
+		background: rgba(40, 20, 80, 1);
+	}
+
+	#mobile-nav-button.active span {
+
+	}
 
 	header nav {
 		display: inline-block;
 		margin: initial;
 		position: absolute;
+		/*left: -50vh;*/
 		top: 100%;
-		height: 100vh;
+		height: 85vh;
 		width: 50vw;
 		background-color: var(--headerbackground);
 		overflow-x: hidden;
+		z-index: 998;
+		/*     transform: translateX(25vw); */
+/*     transition: transform 0.5s linear; */
 	}
-	
-	header nav ul {
-		display: block;
-		list-style-type: none;
+
+	header nav .open {
+		background-color: blue; /*testing purposes only*/
 	}
 
 	#nav-primary li {
 		display: block;
-		width: 100%;
-		padding: 1rem;
 	}
 
 	#nav-primary li a {
-		font-size: 1.5rem;
-		width: 100%;
-	}
-	/*)
-	#nav-primary li a {
+		display: inline-block;
 		text-decoration: none;
-		font-size: 1.1rem;
-		padding: 0.2rem 1rem;
-		background-color: none;
-		color: white;
-		transition: background-color 0.25s linear, color 0.5s linear;
-		-moz-transition: background-color 0.25s linear, color 0.25s linear;
+		font-size: 1rem 0;
+		padding: 1rem;
+		width: 50vw;
+		transition: background-color 0.5s ease-in-out;
+		-moz-transition: background-color 0.5s ease-in-out;
 	}
 
-	#nav-primary li .active {
-		background-color: white;
-		color: black;
-	}*/
-
-	#nav-primary li a:hover {
-		width: 100%;
-	}
+	#nav-primary li .active, 
+	#nav-primary li:hover {
+ 		background-color: white;
+ 		color: black;
+  	}
 }
 
-/* CONTENT 
-************/
+
 section {
 	display: block;
 	background-color: white;
@@ -220,9 +256,6 @@ section {
 	padding-bottom: 2rem;
 }
 
-
-/* FOOTER *
-*************/
 footer {
 	display: block;
 	color: white;
@@ -233,11 +266,4 @@ footer p {
 	text-align: center;
 	margin: auto;
 	padding-top: 2rem;
-}
-
-/* this is where mobile stuff goes */
-@media screen and (max-width: 32rem) {
-	header figure {
-		float: left;
-	}
 }

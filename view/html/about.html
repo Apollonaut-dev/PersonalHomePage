@@ -20,7 +20,7 @@
 						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="https://github.com/Apollonaut-dev/PersonalHomePage">GitHub</a>
 					</figcaption>
 				</figure>
-				<button id="mobile-nav-button" class="hamburger">
+				<button id="mobile-nav-button" class="" onclick="mobile_menu_toggle()">
 						<span class="hamburger-container">
 							<span class="burger-patty"></span>
 							<span class="burger-patty"></span>
@@ -71,6 +71,16 @@
 				}
 
 				// this.className.replace(" inactive", " active");
+			}
+
+			function mobile_menu_toggle() {
+				let burger = document.getElementById("mobile-nav-button");
+				console.log(burger.classList);
+				if ( burger.classList.contains("open") ) {
+					burger.classList.remove("open");
+				} else {
+					burger.classList.add("open");
+				}
 			}
 		</script>
 	</body>
