@@ -10,6 +10,9 @@ module.exports.Route = class Route {
 }
 
 module.exports.Router = class Router {
+	/*
+	@param json:routes json list of routes with type and target fields
+	*/
 	constructor( routes ) {
 		if ( routes ) {
 			this.routes = routes;
@@ -28,6 +31,14 @@ module.exports.Router = class Router {
 	}
 
 	route( request_str ) {
-		return this.routes[request_str.toString()]
+		return this.routes[request_str.toString()];
 	}
 }
+
+// module.exports.PageRouter = class PageRouter extends Router {
+
+// }
+
+// module.exports.AssetRouter = class AssetRouter extends Router {
+
+// }
