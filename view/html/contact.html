@@ -13,48 +13,75 @@
 	</head>
 	<body>
 		<header>
-			<div class="">
-				<figure id="header-synopsis">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Circle_%28transparent%29.png/600px-Circle_%28transparent%29.png" alt="HTML5" />
-					<figcaption id="synopsis">
-						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="https://github.com/Apollonaut-dev/PersonalHomePage">GitHub</a>
-					</figcaption>
-				</figure>
-				<button id="mobile-nav-button" class="" onclick="mobile_menu_toggle()">
-						<span class="hamburger-container">
-							<span class="burger-patty"></span>
-							<span class="burger-patty"></span>
-							<span class="burger-patty"></span>
-						</span>
-				</button>
-				<nav id="nav-primary">
-					<ul id="navlinks">
-						<li><a id="nav-about" href="/about" class="button button-nav">About</a></li>
-						<li><a id="nav-resume" href="/resume" class="button button-nav">Resume</a></li>
-						<li><a id="nav-projects" href="/projects" class="button button-nav">Projects</a></li>
-						<li><a id="nav-thinkery" href="/thinkery" class="button button-nav">Thinkery</a></li>
-						<li><a id="nav-contact" href="/contact" class="button button-nav active">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
+			<figure id="header-synopsis">
+				<img src="/pic-me" alt="HTML5" />
+				<figcaption id="synopsis">
+					This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="https://github.com/Apollonaut-dev/PersonalHomePage">GitHub</a>
+				</figcaption>
+			</figure>
+			<button id="mobile-nav-button" class="" onclick="mobile_menu_toggle()">
+					<span class="hamburger-container">
+						<span class="burger-patty"></span>
+						<span class="burger-patty"></span>
+						<span class="burger-patty"></span>
+					</span>
+			</button>
+			<nav id="nav-primary">
+				<ul id="navlinks">
+					<li><a id="nav-about" href="/about" class="button button-nav">About</a></li>
+					<li><a id="nav-resume" href="/resume" class="button button-nav">Resume</a></li>
+					<li><a id="nav-projects" href="/projects" class="button button-nav">Projects</a></li>
+					<li><a id="nav-thinkery" href="/thinkery" class="button button-nav">Thinkery</a></li>
+					<li><a id="nav-contact" href="/contact" class="button button-nav active">Contact</a></li>
+				</ul>
+			</nav>
 		</header>
 		<main>
-			<section id="about" class="container">
-				<article> 
-					<figure>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Circle_%28transparent%29.png/600px-Circle_%28transparent%29.png" alt="HTML5" />
-						<figcaption class="contact-info">
-							<address>
-								<h5 class="text-label">Phone: </h5>
-								<a href="mailto:anthonydevellis@gmail.com">anthonydevellis@gmail.com</a>
-								<h5 class="text-label">Email: </h5>
-								<a href="tel:+16478189713">(647) 818 9713</a>
-								<h5 class="text-label">LinkedIn: </h5>
-								<a href="https://www.linkedin.com/in/anthony-de-vellis-ba053091">Anthony De Vellis</a>
-							</address>	
-						</figcaption> 
-					</figure>
-				</article>
+			<section id="contact-form" class="container">
+				<form id="form-quote">
+					<h4 id="form-heading" style="text-align: center;">Need a website built? Leave your contact information and a brief description and I'll get in touch!</h4>
+					<hr /><br />
+					<label class="form-label">Name</label>
+					<br />
+					<input class="input-name" />
+					<br />
+					<label class="form-label">Email</label>
+					<br />
+					<input class="input-email" />
+					<br />
+					<label class="form-label">Cell</label>
+					<br />
+					<input class="input-phone" />
+					<br />
+					<label class="form-label">Description</label>
+					<br />
+					<textarea class="input-quote-description"></textarea>
+					<button class="form-submit" onclick="submit_quote()">Submit</button>
+				</form>
+			</section>
+			<br />
+			<section id="contact" class="container">
+				<figure id="contact-info-card">
+					<img src="/pic-me" alt="HTML5" />
+					<figcaption>
+						<address id="contact-info">
+							<ul class="contact-methods-list">
+								<li class="contact-channel">
+									<label class="contact-label">Email </label>
+									<a href="mailto:anthonydevellis@gmail.com">anthonydevellis@gmail.com</a>
+								</li>
+								<li class="contact-channel">
+									<label class="contact-label">Cell </label>
+									<a href="tel:+16478189713">(647)-818-9713</a>
+								</li>
+								<li class="contact-channel">
+									<label class="contact-label">LinkedIn </label>
+									<a href="https://www.linkedin.com/in/anthony-de-vellis-ba053091">Anthony de Vellis</a>
+								</li>
+							</ul>
+						</address>	
+					</figcaption> 
+				</figure>
 			</section>
 		</main>
 		<footer>
@@ -107,5 +134,9 @@
 				}
 			});
 			// implement onResize event listener
+
+			function submit_quote() {
+				alert("Form submitted");
+			}
 		</script>
 	</body>

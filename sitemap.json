@@ -44,7 +44,8 @@
 		"target":"/view/assets/favicon.ico"
 	},
 	"/pic-me":{
-
+		"type":"image/png",
+		"target":"/view/assets/me-pic.png"
 	},
 	"/assets/mechosystem-picture":{
 		"type":"image/jpeg",
@@ -53,5 +54,9 @@
 	"/assets/mechosystem-video":{
 		"type":"video/mp4",
 		"target":"/view/assets/mechosystem-video.mp4"
+	},
+	"/assets/main-background":{
+		"type":"image/jpeg",
+		"target":"/view/assets/main-background.jpg"
 	}
 }

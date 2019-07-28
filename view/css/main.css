@@ -40,6 +40,12 @@ body {
 	overflow: hidden;
 }
 
+@media screen and (max-width: 720px) {
+	.container {
+		width: 100%;
+	}
+}
+
 /*@media screen and (max-width: 720px) {
 	.container {
 		width: 95%;
@@ -59,6 +65,16 @@ header {
 	padding-top: 1rem;
 	text-align: center;
 	justify-content: center;
+}
+/* TODO fix explicit height, figure out margins*/
+@media screen and (max-width: 720px) {
+	header {
+		display: block;
+		height: 130px;
+		position: relative;
+		color: white;
+		padding: 0.5rem 0;
+	}
 }
 
 #mobile-nav-button {
@@ -91,11 +107,44 @@ header {
 	padding: 1rem;
 	transform: scale(1);
 }
+/* Mobile header figure tweaks */
+@media screen and (max-width: 720px) {
+	#header-synopsis {
+		display: table;
+		vertical-align: middle;
+		padding-left: 2rem;
+	}
+
+	#header-synopsis img {
+		display: inline-block;
+		margin-right: 1.5rem;
+		vertical-align: middle;
+		height: 80px;
+		width: 80px;
+	}
+	
+	#header-synopsis figcaption {
+		transform: initial;
+		transition: initial;
+		display: table-cell;
+		caption-side: right;
+		vertical-align: middle;
+		width: 50vw;
+		opacity: 100;
+		text-align: left;
+		font-size: 0.8rem;
+	}
+
+	#header-synopsis:hover figcaption {
+		opacity: initial;
+		padding: initial;
+		transform: initial;
+	}
+}
 
 #synopsis a {
 	text-decoration: underline;
 	color: white;
-
 }
 
 #nav-primary {
@@ -105,12 +154,15 @@ header {
 
 #nav-primary ul {
 	display: block;
-	width: 100%;
+	margin: auto;
+	width: 80%;
 	list-style-type: none;
 }
 
 #nav-primary li {
-	display: inline;
+	display: inline-block;
+	text-align: center;
+	width: 15%;
 }
 
 #nav-primary li a {
@@ -133,21 +185,90 @@ header {
 	color: black;
 }
 
+@media screen and (max-width: 720px) {
+	#nav-primary {
+		display: inline-block;
+		margin: initial;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		height: 85vh;
+		width: 0;
+		background-color: var(--headerbackground);
+		overflow-x: hidden;
+		z-index: 998;
+		transition: width 0.25s ease-out;
+		-moz-transition: width 0.25s ease-out;
+	}
+
+	#nav-primary li {
+		display: inline-block;
+		width: 50vw;
+		transition: background-color 0.25s;
+		-moz-transition: background-color 0.25s;
+	}
+	
+	#nav-primary li:hover {
+ 		background-color: white;
+ 		color: black;
+  	}
+
+	#nav-primary li a {
+		display: block;
+		padding: 1rem 0rem;
+		text-decoration: none;
+		font-size: 1rem 0;
+	}
+	/* hamburger menu button */
+	#mobile-nav-button {
+		display: inline-block;
+		background-color: rgba(80,40,160,1);
+		border: 1px black;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 2rem;
+		width: 4rem;
+		vertical-align: middle;
+		transition: background-color 0.25s ease-out;
+		-moz-transition: background-color 0.25s ease-out;
+	}	
+
+	#mobile-nav-button .hamburger-container {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+	}
+
+	#mobile-nav-button .hamburger-container span {
+		display: block;
+		border: 0.15rem solid white;
+		border-radius: 0.2rem;
+		margin: 0.75rem 0.5rem;
+	}
+}
+
 main {
 	display: block;
-	background-color: rgba(40,20,80,1);
+	/*background-color: rgba(40,20,80,1);*/
+	background-image: url('/assets/main-background');
 	min-height: calc(100vh - 160.5px - 56px);
 	padding-top: 2rem;
 	padding-bottom: 5rem;/* account for size of footer */
 }
 
+@media screen and (max-width: 720px) {
+	main {
+		padding-top: 0;
+		padding-bottom: 3rem;
+		background: white;
+	}
+}	
+
 section {
 	display: block;
 	background-color: white;
-}
-
-article {
-	padding: 2rem 4rem;
+	padding: 2rem 2rem;
 }
 
 footer {
@@ -188,29 +309,139 @@ footer p {
 	text-indent: 2rem;
 }
 
-.projects-figure {
-	float: right;
-	padding: 1rem;
+
+/* PROJECTS */
+
+#mechosystem-links {
+	
 }
 
-.projects-figure img {
+.projects-figure {
 	display: block;
-	border: solid 2px;
 	margin: auto;
-	height: 533px;
-	width: 300px;
+	padding: 1rem;
+	text-align: center;
+}
+
+.projects-figure img,
+.projects-figure video {
+	display: block;
+	margin: auto;
+}
+
+.projects-figure video {
+	background: rgba(10,5,20,1);
 }
 
 .projects-figure figcaption {
-	padding-top: 0.5rem;
-	text-align: center;
 	display: block;
+	margin: auto;
+	max-width: 320px;
+	padding-top: 0.5rem;
 }
 
-.blog-title {
+#mechosystem-picture {
+	float: right;
+}
 
+#mechosyste-picture img {
+	border: solid 2px;
+}
+
+#mechosystem-doc img {
+	border: none;
+}	
+
+/* THINKERY */
+.blog-title {
+	font-weight: normal;
 }
 
 .blog-byline {
+	font-style: italic;
+	font-weight: normal;
+}	
 
+/* CONTACT */
+
+#contact-form {
+
+}
+
+#contact-form #form-quote {
+	display: block;
+	margin: auto;
+	border: solid 2px;
+	padding: 0 2rem;
+	max-width: 40rem;
+}
+
+#form-heading {
+	padding-top: 1rem;
+}
+
+#form-quote label {
+
+}
+
+#form-quote input {
+	display: block;
+	width: 100%;
+}
+
+#form-quote textarea {
+	display: block;
+	width: 100%;
+	height: 8rem;
+}
+
+#form-quote button.form-submit {
+	display: block;
+	margin: 1rem auto;
+	height: 3rem;
+	width: 10rem;
+	border: none;
+	background: var(--headerbackground);
+}
+
+#contact-info-card {
+	display: table;
+	margin: auto;
+}
+
+#contact-info-card img {
+	display: block;
+	margin: auto;
+	height: 200px;
+	width: 200px;
+}
+
+#contact-info-card figcaption {
+	display: table-cell;
+	caption-side: right;
+	vertical-align: middle;
+	padding-left: 4rem;
+}
+
+#contact-info-card address {
+	font-style: normal;
+}
+
+#contact-info ul {
+	list-style-type: none;
+}
+
+#contact-info li {
+	display: block;
+	padding: 0.5rem 0;
+}
+
+#contact-info a {
+	text-decoration-line: none;
+	text-decoration-color: blue;
+}
+
+#contact-info .contact-label {
+	display: inline-block;
+	width: 5rem;
 }
