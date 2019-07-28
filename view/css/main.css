@@ -17,6 +17,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+/* TODO fix for specific elements, consider adding 'focusable' class*/
+*:focus {
+	outline: thin dotted;
+}
 
 html {
 	position: relative;
@@ -45,12 +49,6 @@ body {
 		width: 100%;
 	}
 }
-
-/*@media screen and (max-width: 720px) {
-	.container {
-		width: 95%;
-	}
-}*/
 
 .center {
 	margin: auto;
@@ -201,9 +199,15 @@ header {
 		-moz-transition: width 0.25s ease-out;
 	}
 
+	#nav-primary ul {
+		display: block;
+		width: 100%;
+		margin: auto;
+	}
+
 	#nav-primary li {
 		display: inline-block;
-		width: 50vw;
+		width: 100%;
 		transition: background-color 0.25s;
 		-moz-transition: background-color 0.25s;
 	}
@@ -241,6 +245,7 @@ header {
 	}
 
 	#mobile-nav-button .hamburger-container span {
+		outline: none;
 		display: block;
 		border: 0.15rem solid white;
 		border-radius: 0.2rem;
