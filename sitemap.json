@@ -3,29 +3,33 @@
 		"type":"text/html",
 		"target":"/view/html/about.html"
 	},
-	"/about.html":{
+	"/about":{
 		"type":"text/html",
 		"target":"/view/html/about.html"
 	},
-	"/resume.html":{
+	"/resume":{
 		"type":"text/html",
 		"target":"/view/html/resume.html"
 	},
-	"/projects.html":{
+	"/projects":{
 		"type":"text/html",
 		"target":"/view/html/projects.html"
 	},
-	"/thinkery.html":{
+	"/thinkery":{
 		"type":"text/html",
 		"target":"/view/html/thinkery.html"
 	},
-	"/contact.html":{
+	"/contact":{
 		"type":"text/html",
 		"target":"/view/html/contact.html"
 	},
-	"/404.html":{
+	"/404":{
 		"type": "text/html",
 		"target": "/view/html/404.html"
+	},
+	"/500":{
+		"type": "text/html",
+		"target":"/view/html/500.html"
 	},
 	"/css/main.css":{
 		"type":"text/css",
@@ -38,5 +42,16 @@
 	"/favicon.ico":{
 		"type":"image/svg+xml",
 		"target":"/view/assets/favicon.ico"
+	},
+	"/pic-me":{
+
+	},
+	"/assets/mechosystem-picture":{
+		"type":"image/jpeg",
+		"target":"/view/assets/mechosystem-picture.jpg"
+	},
+	"/assets/mechosystem-video":{
+		"type":"video/mp4",
+		"target":"/view/assets/mechosystem-video.mp4"
 	}
 }

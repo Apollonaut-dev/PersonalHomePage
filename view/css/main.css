@@ -138,7 +138,7 @@ main {
 	background-color: rgba(40,20,80,1);
 	min-height: calc(100vh - 160.5px - 56px);
 	padding-top: 2rem;
-	padding-bottom: 5rem;
+	padding-bottom: 5rem;/* account for size of footer */
 }
 
 section {
@@ -147,7 +147,7 @@ section {
 }
 
 article {
-	padding: 2rem 0;
+	padding: 2rem 4rem;
 }
 
 footer {
@@ -158,16 +158,59 @@ footer {
 	background: var(--background);
 	color: white;
 	height: 5rem;*/
+	display: block;
 	background-color: var(--background);
 	color: white;
 	position: absolute;
 	bottom: 0;
-	width: 100vw;
-	padding-top: -2rem;
+	width: 100%;
 }
 
 footer p {
 	text-align: center;
 	margin: auto;
-	padding-top: 2rem;
+	padding: 1rem;
+}
+
+
+/*  =======
+	CLASSES
+	=======
+	-universal classes at the top 
+	-structural classes
+		-about
+		-resume
+		-projects
+		-thinkery
+		-contact	
+===================================*/
+.text-paragraph {
+	text-indent: 2rem;
+}
+
+.projects-figure {
+	float: right;
+	padding: 1rem;
+}
+
+.projects-figure img {
+	display: block;
+	border: solid 2px;
+	margin: auto;
+	height: 533px;
+	width: 300px;
+}
+
+.projects-figure figcaption {
+	padding-top: 0.5rem;
+	text-align: center;
+	display: block;
+}
+
+.blog-title {
+
+}
+
+.blog-byline {
+
 }

@@ -5,55 +5,66 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<!-- SEO STUFF -->
-		<meta name="description" content="Anthony's Personal Homepage" />
-		<meta name="keywords" content="web design, web developer, freelance, for hire, student" />
-		<meta name="author" content="Anthony de Vellis" />
+		<meta name="description" content="Anthony's Personal Homepage">
+		<meta name="keywords" content="web design, web developer, freelance, for hire, student">
+		<meta name="author" content="Anthony de Vellis">
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
 		<title>Anthony De Vellis</title>
 	</head>
 	<body>
 		<header>
-			<div class="container">
+			<div class="">
 				<figure id="header-synopsis">
 					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Circle_%28transparent%29.png/600px-Circle_%28transparent%29.png" alt="HTML5" />
 					<figcaption id="synopsis">
-						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="">Source code</a>
+						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="https://github.com/Apollonaut-dev/PersonalHomePage">GitHub</a>
 					</figcaption>
 				</figure>
+				<button id="mobile-nav-button" class="" onclick="mobile_menu_toggle()">
+						<span class="hamburger-container">
+							<span class="burger-patty"></span>
+							<span class="burger-patty"></span>
+							<span class="burger-patty"></span>
+						</span>
+				</button>
 				<nav id="nav-primary">
 					<ul id="navlinks">
-						<li><a id="nav-about" href="/about.html" class="button button-nav">About</a></li>
-						<li><a id="nav-resume" href="/resume.html" class="button button-nav">Resume</a></li>
-						<li><a id="nav-projects" href="/projects.html" class="button button-nav">Projects</a></li>
-						<li><a id="nav-thinkery" href="/thinkery.html" class="button button-nav active">Thinkery</a></li>
-						<li><a id="nav-contact" href="/contact.html" class="button button-nav">Contact</a></li>
+						<li><a id="nav-about" href="/about" class="button button-nav">About</a></li>
+						<li><a id="nav-resume" href="/resume" class="button button-nav">Resume</a></li>
+						<li><a id="nav-projects" href="/projects" class="button button-nav">Projects</a></li>
+						<li><a id="nav-thinkery" href="/thinkery" class="button button-nav active">Thinkery</a></li>
+						<li><a id="nav-contact" href="/contact" class="button button-nav">Contact</a></li>
 					</ul>
-					<div class="menu-icon-highlight mobile">
-						<!-- <img src="/menu.svg" alt="HTML"> -->
-						<div class="menu-icon">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</div>
 				</nav>
 			</div>
 		</header>
 		<main>
-			<section id="about" class="resume">
-				<div class="container">
-					<article> 
-						<h3>Article</h3>
-						<p>
-
-						</p>
-					</article>
-				</div>
+			<section id="about" class="container">
+				<article class="blog-post"> 
+					<h3 class="blog-title">A Practical Egalitarian Alternative to Patrillineal and Matrillineal Family Naming Convention</h3>
+					<h4 class="blog-byline">8 June 2019</h4>
+					<hr /><br />
+					<p class="text-paragraph">
+						In the west, many women lament the tradition of women giving up their names when they marry. This is called "patrilinealism" and this is how most societies and cultures function, although there are exceptions. There are anthropological reasons why most societies are patrilineal rather than matrilineal but in the modern egalitarian world it is understandable why individuals, male and female, should grow attached to their names and want to keep them. 
+					</p><br />
+					<p class="text-paragraph">
+						One solution is hyphenation. This is what my aunt did when she married. Her name is De Vellis-Carino and her students call her by the hip shorthand "Mrs. D-C." However, her children are all named Carino, not De Vellis-Carino. My friend on the other hand inherited both of his parents’ names: Blossmanis-Robinson. His parents retain their own unhyphenated names. A problem remains: what if he marries a feminist too? How many hyphens is too many hyphens? If my friend married my cousin, would their name be some hyphenated combination of DeVellis-Carino-Bossmanis-Robinson? If this system was used consistently, the number of last names would double with each generation. This is not practical. In short time we would have entire data-centres full of family names.
+					</p><br />
+					<p class="text-paragraph">
+						Here is an alternative. Suppose Justin King and Eva Queen get married and have a son and a daughter, Jamie and Evelyn. The family name would then become King-Queen, the family would be Justin, Eva, Jamie, and Evelyn King-Queen. When Jamie comes of age, he would take the name of his father, King, and when Evelyn comes of age, she would take the name of her mother, Queen. Thus, if Jamie King-Queen marries Jane Princess, Jamie would become Jamie King-Princess and likewise, if Evelyn King-Queen marries Eduardo Prince, her name would then become Evelyn Prince-Queen. Jamie's n<sup>th</sup> great grandson would retain the name "King" and Evelyn's n<sup>th</sup> great granddaughter would retain the name "Queen." 
+					</p><br />
+					<p class="text-paragraph">
+						The first and obvious advantage of this system is that it is egalitarian. Both the husband's and wife's name are used for the family, and when the children come of age they retain either the masculine or the feminine name. Another advantage of this system is that it would allow us to track the lineage of both men and women with ease, instead of just men. A potential disadvantage is that children of single parents would be easily identified, possibly resulting in discrimination. Although this may indeed be an advantage considering the measurement and logistics of welfare support to single mothers.
+					</p><br />
+					<p class="text-paragraph">
+						Overall I think this is a fair and reasonable system that would make for an easy compromise even between the most proud husband and feminist wife. After all, husbands already accept that their daughters will not retain their names and their sons still get to keep their names. In this arrangement, women would get to keep their (mother's) names and see it passed on to the next generations just as their husbands (in most societies) have done with for generations. It's simple, egalitarian, and as a point of pragmatism, the male ego is unassailed allowing for easy adoption by the 94% of society that is heterosexual.
+					</p>
+				</article>
 			</section>
 		</main>
 		<footer>
 			<div class="container">
-				<p>Anthony de Vellis &copy; 2019</p>
+				<p>Anthony de Vellis &copy; <script>document.write(new Date().getFullYear());</script></p>
 			</div>
 		</footer>
 		<script>
@@ -73,5 +84,33 @@
 
 				// this.className.replace(" inactive", " active");
 			}
+
+			function mobile_menu_toggle() {
+				let burger = document.getElementById("mobile-nav-button");
+				let side_nav = document.getElementById("nav-primary");
+				console.log(burger.classList);
+
+				if ( burger.classList.contains("open") ) { // close menu
+					burger.classList.remove("open");
+					burger.style["background-color"] = "rgba(80,40,160,1)";
+					side_nav.style["width"] = "0";
+					document.body.style["background-color"] = "white";
+				} else {	// open menu
+					burger.classList.add("open");
+					burger.style["background-color"] = "rgba(60,30,120,1)";
+					// check if we're in mobile mode
+					side_nav.style["width"] = "50vw";
+					// darken the rest of the screen
+					document.body.style["background-color"] = "rgba(0,0,0, 0.6)";
+				}
+			}
+			// reset navbar on resize so darkened overlay and navbar width return to normal
+			document.documentElement.addEventListener("resize", function() { 
+				if ( document.documentElement.clientWidth > 720 ) {
+					document.body.style["background-color"] = "white";
+					side_nav.style["width"] = "100%";
+				}
+			});
+			// implement onResize event listener
 		</script>
 	</body>

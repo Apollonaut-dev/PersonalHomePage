@@ -13,47 +13,84 @@
 	</head>
 	<body>
 		<header>
-			<div class="container">
+			<div class="">
 				<figure id="header-synopsis">
 					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Circle_%28transparent%29.png/600px-Circle_%28transparent%29.png" alt="HTML5" />
 					<figcaption id="synopsis">
-						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="">Source code</a>
+						This website is responsive and accessible. Everything from the server to the html is original source by me. <a href="https://github.com/Apollonaut-dev/PersonalHomePage">GitHub</a>
 					</figcaption>
 				</figure>
+				<button id="mobile-nav-button" class="" onclick="mobile_menu_toggle()">
+						<span class="hamburger-container">
+							<span class="burger-patty"></span>
+							<span class="burger-patty"></span>
+							<span class="burger-patty"></span>
+						</span>
+				</button>
 				<nav id="nav-primary">
 					<ul id="navlinks">
-						<li><a id="nav-about" href="/about.com" class="button button-nav">About</a></li>
-						<li><a id="nav-resume" href="/resume.html" class="button button-nav">Resume</a></li>
-						<li><a id="nav-projects" href="/projects.html" class="button button-nav active">Projects</a></li>
-						<li><a id="nav-thinkery" href="/thinkery.html" class="button button-nav inactive">Thinkery</a></li>
-						<li><a id="nav-contact" href="/contact.html" class="button button-nav">Contact</a></li>
+						<li><a id="nav-about" href="/about" class="button button-nav">About</a></li>
+						<li><a id="nav-resume" href="/resume" class="button button-nav">Resume</a></li>
+						<li><a id="nav-projects" href="/projects" class="button button-nav active">Projects</a></li>
+						<li><a id="nav-thinkery" href="/thinkery" class="button button-nav">Thinkery</a></li>
+						<li><a id="nav-contact" href="/contact" class="button button-nav">Contact</a></li>
 					</ul>
-					<div class="menu-icon-highlight mobile">
-						<!-- <img src="/menu.svg" alt="HTML"> -->
-						<div class="menu-icon">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</div>
 				</nav>
 			</div>
 		</header>
 		<main>
-			<section id="about" class="resume">
-				<div class="container">
-					<article> 
-						<h3>Article</h3>
-						<p>
-
-						</p>
-					</article>
-				</div>
+			<section id="about" class="container">
+				<article> 
+					<h3>Mech-O-System</h3>
+					<h4>Why I decided to pursue computer engineering</h4>
+					<hr /><br />
+					<figure class="projects-figure">
+						<img src="/assets/mechosystem-picture" alt="HTML5" />
+						<figcaption>
+							The completed hand-model
+						</figcaption>
+					</figure>
+					<p class="text-paragraph">
+						"Mech-O-System" was the title of a project given to first year mechanical engineering students at the University of Waterloo. This is the course that introduced me to the fundamentals of engineering and it is in this class that undergraduate journey begins. It is also the reason I decided to switch career paths and pursue computer engineering instead.
+					</p><br />
+					<p class="text-paragraph">
+						The project was supposed to be a pedagogical simulation of a typical process an engineering firm would have for analyzing, bidding on, and completing a contract for a client. The client in this case was the teaching staff consisting of professors M. Collins, C. Hull, and A. Trivett. The 'RFP' was to build a demonstration of mechanical principles. We were to follow a typical engineering process: gathering and analysis of constraints and criteria, assignment of responsibilities, as well as time and dependency analysis. The requirement was to make something innovative, interactive, and something that would serve as marketing material for the Fall 2015 Engineering Open House for prospective UW Engineering students. We were to show these high school students just how much they could accomplish in just one short year of UW Engineering. The constraints were a list of materials and tools we were allowed to use. This list included Lego NXT Robotics kits, pre-fabricated construction materials, power electronics devices such as servos and oscillators, a plexi-class laser cutter, several 3D printers and anything we could find and/or be trained to use in the Mechanical and Mechatronics Engineering Machine Shop.
+					</p><br />
+					<p class="text-paragraph">
+						After many long nights of tomfoolery and technical experimentation, I had come up with the idea of building a prosthetic of a human hand. We were to mimic the musculoskeletal mechanics of the genuine organic version. So, we-decided to use tendon-like structures to control the positioning of the hand. In the end we wouldn't be able to work out a design that made it feasible to make all the degrees of freedom work this way, but we did get fist-closing and opening and, wrist pitch to be actuated with systems of fishing wire, cleverly drilled holes and servor motors. 
+					</p><br />
+					<p class="text-paragraph">
+						Our first prototype failed, miserably. It was structurally unstable. We had not considered the weight of the forearm, the stress of the tendon rotation and pitch (it turns out there is a lot of wasted force in your forearms) or the brittleness of the 3D printed plastic. We then discovered we could build the rest of the model in solidworks (instead of just the parts we needed 3D printed) and run stress/strain simulations to see where the weak points were. With a counterweight added, structural reinforcement and some targeted redesign we were able to test the degrees of motion independently with success -- the structure held up!
+					</p><br />
+					<p class="text-paragraph">
+						At this point in the project, I knew I liked programming. So me and a group member, Mark, took the lead on this front. We were using Lego's proprietary RobotC library to write C sketches to the NXT Brick and communicate with the actuators and sensors. All was going well. We settled on using an Xbox-360 controller for input and Microsoft's API was easy enough to use. However, we ran into several problems on the software side.
+					</p><br />
+					<p class="text-paragraph">
+						The first, and easiest to figure out, was that we had motion even without providing any input to the controller. The simple fix was to add a constant dead-zone to continuous inputs so that a minimum amount of input would be required before sending it to the actuator. The second problem was that we couldn't actuate more than one actuator at a time. This is when I discovered the difference between two fundamental design patterns in computer engineering: polling and interrupts.
+					</p><br />
+					<p class="text-paragraph">
+						Our design up to this point consisted of a single loop in which all the sensors were observed at the top and all the actuators actuated at the bottom. However, the architecture of the NXT Brick was such that it couldn't communicate with more than one actuator in a single polling loop. With the help of our TAs, Yash, Yasser and Google, we learned we needed to register some Interrupt Service Routines before entering the loop and map them to the 360 controller's inputs. This way, the NXT CPU could suspend the main loop and handle the inputs as they were queued up by the interrupt handlers and then return to the non-time-critical tasks in the main loop after sending output to the actuators.
+					</p><br />
+					<p class="text-paragraph">
+						Though it seems like a near-trivial problem now, researching and fixing this functionality was very difficult at the time. Figuring out the solution simultaneously overwhelmed and awed me. We were introduced to many facets of computer engineering at once, such as CPU context-switching, interrupt handling, how to write an ISR, the memory-mapping of devices (and the software-handled interrupts of the NXT architecture) and the design patterns of tight-polling and interrupt driven execution. This project was one of the major reasons I worked hard to get the > 80 average it would take to transfer to computer engineering. 
+					</p><br />
+					<p class="text-paragraph"> 
+						Our final task of the project was to prepare an automated demonstration of the functionality of our Mech-O-System. Linked below is a video of that demonstration, as well as a Google Document of the final 'proposal' we handed in to our professors. Unfortunately, I no longer have access to the source code.
+					</p>
+					<figure>
+						<video width="320" height="240" controls>
+							<source src="/assets/mechosystem-video" type="video/mp4">
+						</video>
+						<figcaption>
+							A video of what it would look like if Her Majesty Queen Elizabeth II required a cutting-edge prosthetic
+						</figcaption>
+					</figure>
+				</article>
 			</section>
 		</main>
 		<footer>
 			<div class="container">
-				<p>Anthony de Vellis &copy; 2019</p>
+				<p>Anthony de Vellis &copy; <script>document.write(new Date().getFullYear());</script></p>
 			</div>
 		</footer>
 		<script>
@@ -73,5 +110,33 @@
 
 				// this.className.replace(" inactive", " active");
 			}
+
+			function mobile_menu_toggle() {
+				let burger = document.getElementById("mobile-nav-button");
+				let side_nav = document.getElementById("nav-primary");
+				console.log(burger.classList);
+
+				if ( burger.classList.contains("open") ) { // close menu
+					burger.classList.remove("open");
+					burger.style["background-color"] = "rgba(80,40,160,1)";
+					side_nav.style["width"] = "0";
+					document.body.style["background-color"] = "white";
+				} else {	// open menu
+					burger.classList.add("open");
+					burger.style["background-color"] = "rgba(60,30,120,1)";
+					// check if we're in mobile mode
+					side_nav.style["width"] = "50vw";
+					// darken the rest of the screen
+					document.body.style["background-color"] = "rgba(0,0,0, 0.6)";
+				}
+			}
+			// reset navbar on resize so darkened overlay and navbar width return to normal
+			document.documentElement.addEventListener("resize", function() { 
+				if ( document.documentElement.clientWidth > 720 ) {
+					document.body.style["background-color"] = "white";
+					side_nav.style["width"] = "100%";
+				}
+			});
+			// implement onResize event listener
 		</script>
 	</body>
