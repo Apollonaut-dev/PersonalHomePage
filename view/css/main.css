@@ -148,6 +148,7 @@ header {
 #nav-primary {
 	display: block;
 	margin: auto;
+	padding: 1rem 0;
 }
 
 #nav-primary ul {
@@ -166,7 +167,7 @@ header {
 #nav-primary li a {
 	text-decoration: none;
 	font-size: 1.1rem;
-	padding: 0.2rem 1rem;
+	padding: 0.3rem 1rem;
 	background-color: none;
 	color: white;
 	transition: background-color 0.25s linear, color 0.5s linear;
@@ -311,7 +312,7 @@ footer p {
 		-contact	
 ===================================*/
 .text-paragraph {
-	text-indent: 2rem;
+	text-indent: 1rem;
 }
 
 
@@ -319,6 +320,19 @@ footer p {
 
 #mechosystem-links {
 	
+}
+
+h3 {
+	color: var(--headerbackground);
+	font-size: 2rem;
+	padding: 0.5rem 0;
+}
+
+h4 {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.2rem;
+	padding: 0.25rem 0;
 }
 
 .projects-figure {
@@ -343,6 +357,8 @@ footer p {
 	margin: auto;
 	max-width: 320px;
 	padding-top: 0.5rem;
+	color: grey;
+	font-style: italic;
 }
 
 #mechosystem-picture {
@@ -376,7 +392,7 @@ footer p {
 #contact-form #form-quote {
 	display: block;
 	margin: auto;
-	border: solid 2px;
+	/*border: solid 2px;*/
 	padding: 0 2rem;
 	max-width: 40rem;
 }
