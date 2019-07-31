@@ -8,6 +8,7 @@ var router = new module_router.Router(routemap);
 // this function runs every time the listener detects a request
 module.exports = {
 	handleRequest: function(request, response) {
+		console.log(request.connection.remoteAddress);
 		// parse the request, get the routing key
 		let path = url.parse(request.url).pathname;
 		// attempt to find response on filesystem
