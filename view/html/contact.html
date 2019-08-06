@@ -16,7 +16,7 @@
 			<figure id="header-synopsis">
 				<img src="/pic-me" alt="HTML5" />
 				<figcaption id="synopsis">
-					<a href="https://github.com/Apollonaut-dev/PersonalHomePage">GitHub</a>
+					Anthony de Vellis
 				</figcaption>
 			</figure>
 			<button id="mobile-nav-button" class="" onclick="mobile_menu_toggle()">
@@ -38,25 +38,25 @@
 		</header>
 		<main>
 			<section id="contact-form" class="container">
-				<form id="form-quote">
-					<h4 id="form-heading" style="text-align: center;">Need a website built? Leave your contact information and a brief description and I'll get in touch!</h4>
+				<form id="form-quote" action="/submit-form" method="post" enctype="multipart/form-data">
+					<h4 id="form-heading" class="article-header" style="text-align: center;">Need a website built? Leave your contact information and a brief description and I'll get in touch!</h4>
 					<hr /><br />
 					<label class="form-label">Name</label>
 					<br />
-					<input class="input-name" />
+					<input name="name" type="text" class="input-name" />
 					<br />
 					<label class="form-label">Email</label>
 					<br />
-					<input class="input-email" />
+					<input name="email" type="text" class="input-email" />
 					<br />
 					<label class="form-label">Cell</label>
 					<br />
-					<input class="input-phone" />
+					<input name="phone" type="text" class="input-phone" />
 					<br />
 					<label class="form-label">Description</label>
 					<br />
-					<textarea class="input-quote-description"></textarea>
-					<button class="form-submit" onclick="submit_quote()">Submit</button>
+					<textarea name="description" type="text" class="input-quote-description"></textarea>
+					<button class="form-submit" type="submit" onclick="submit_quote()">Submit</button>
 				</form>
 			</section>
 			<br />
@@ -74,6 +74,9 @@
 								</li>
 								<li class="contact-channel">
 									<a href="https://www.linkedin.com/in/anthony-de-vellis-ba053091">LinkedIn</a>
+								</li>
+								<li class="contact-channel">
+									15 Shadetree Cres., Vaughan, ON, L4H1Y3
 								</li>
 							</ul>
 						</address>	
