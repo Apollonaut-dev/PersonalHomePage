@@ -1,10 +1,8 @@
 /* TODO
-@fix header; make height absolute, sidebar span the entire vertical height
-@fix menu on click; browser doesn't update CSS gotta do it in JS
-@add CONTENT
-@animate sidebar on burger click
 @animate burger on burger click
-
+@implement using SCSS
+@@use variables for mobile size constant
+@@use variables for UI transition times
 */
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap');
@@ -192,11 +190,7 @@ header {
 	-moz-transition: background-color 0.25s linear, color 0.25s linear;
 }
 
-#nav-primary li .active {
-	background-color: white;
-	color: black;
-}
-
+#nav-primary li a.active,
 #nav-primary li a:hover {
 	background-color: white;
 	color: black;
@@ -230,11 +224,6 @@ header {
 		transition: background-color 0.25s;
 		-moz-transition: background-color 0.25s;
 	}
-	
-	#nav-primary li:hover {
- 		background-color: white;
- 		color: black;
-  	}
 
 	#nav-primary li a {
 		display: block;
@@ -242,6 +231,13 @@ header {
 		text-decoration: none;
 		font-size: 1rem 0;
 	}
+
+	#nav-primary li a:hover,
+	#nav-primary li a:focus {
+ 		background-color: white;
+ 		color: black;
+  	}
+
 	/* hamburger menu button */
 	#mobile-nav-button {
 		display: inline-block;
@@ -336,14 +332,14 @@ footer p {
 }
 
 .article-header {
-	color: var(--primary);
+	color: var(--secondary);
 	font-size: 2rem;
 	padding: 0.5rem 0;
 	line-height: 2.5rem;
 }
 
-.article-subheader {S
-	color: var(--secondary);
+.article-subheader {
+	color: var(--accent);
 	font-weight: normal;
 	font-style: italic;
 	font-size: 1.5rem;
@@ -352,8 +348,12 @@ footer p {
 
 /* ABOUT */
 
-article p {
-	font-size: 1.5rem;
+article#about-me h4 {
+	text-align: center;
+}
+
+article#about-me p {
+	font-size: 1.2rem;
 	line-height: 2.5rem;
 }
 
@@ -488,24 +488,31 @@ article#resume #education ul li {
 
 .blog-post img { 
 	display: block;
+	width: 100%;
 	margin: auto;
 }
 
 /* CONTACT */
 
-#contact-form {
-
-}
-
 #contact-form #form-quote {
 	display: block;
 	margin: auto;
-	/*border: solid 2px;*/
 	padding: 0 2rem;
 	max-width: 40rem;
 }
 
+@media screen and (max-width: 720px) {
+	#contact-form {
+		
+	}
+
+	#form-quote {
+		padding: 0;
+	}
+}
+
 #form-heading {
+	text-align: center;
 	padding-top: 1rem;
 }
 
@@ -530,7 +537,8 @@ article#resume #education ul li {
 	height: 3rem;
 	width: 10rem;
 	border: none;
-	background: var(--headerbackground);
+	background: var(--accent);
+	color: white;
 }
 
 /*contact card part*/
