@@ -58,5 +58,13 @@
 	"/assets/main-background":{
 		"type":"image/jpeg",
 		"target":"/view/assets/main-background.jpg"
+	},
+	"/assets/thinkery-naming-system.svg":{
+		"type":"image/svg+xml",
+		"target":"/view/assets/thinkery-naming-system.svg"
+	},
+	"/submit-form":{
+		"type":"multipart/form-data",
+		"target":"/form-submit.js"
 	}
 }
