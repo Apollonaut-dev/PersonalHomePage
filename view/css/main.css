@@ -182,6 +182,8 @@ header {
 
 #nav-primary li a {
 	text-decoration: none;
+	text-transform: uppercase;
+	font-family: "Source Code Pro", 400;
 	font-size: 1.1rem;
 	padding: 0.3rem 1rem;
 	background-color: none;
