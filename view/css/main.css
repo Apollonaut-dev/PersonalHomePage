@@ -183,7 +183,7 @@ header {
 #nav-primary li a {
 	text-decoration: none;
 	text-transform: uppercase;
-	font-family: "Source Code Pro", 400;
+	font-family: "Source Code Pro";
 	font-size: 1.1rem;
 	padding: 0.3rem 1rem;
 	background-color: none;
@@ -193,8 +193,9 @@ header {
 }
 
 #nav-primary li a.active,
-#nav-primary li a:hover {
-	background-color: white;
+#nav-primary li a:hover,
+#nav-primary li a:focus {
+	background-color: var(--background_light);
 	color: black;
 }
 
@@ -233,12 +234,6 @@ header {
 		text-decoration: none;
 		font-size: 1rem 0;
 	}
-
-	#nav-primary li a:hover,
-	#nav-primary li a:focus {
- 		background-color: white;
- 		color: black;
-  	}
 
 	/* hamburger menu button */
 	#mobile-nav-button {
