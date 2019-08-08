@@ -505,12 +505,15 @@ article#resume #education ul li {
 
 .blog-post img { 
 	float: right;
+	padding: 1rem;
+	width: 100%;
 	max-width: 60rem;
 	margin: auto;
 }
 
 @media screen and (max-width: 720px) {
 	.blog-post img {
+		padding: 0;
 		float: initial;
 		width: 100%;
 		display: block;
