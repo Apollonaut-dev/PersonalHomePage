@@ -13,7 +13,7 @@
 	--headerbackground: rgba(80, 40, 160, 1);
 
 	--primary: rgba(80,40,160,1);
-	--accent: white;
+	--accent: #41658a;
 	--background_light: rgba(255, 255, 255, 1);
 	--background_dark: rgba(76, 84, 84, 1);
 }
@@ -196,7 +196,7 @@ header {
 #nav-primary li a.active,
 #nav-primary li a:hover,
 #nav-primary li a:focus {
-	background-color: var(--accent);
+	background-color: white;
 	color: black;
 }
 
