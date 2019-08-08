@@ -13,7 +13,7 @@
 	--headerbackground: rgba(80, 40, 160, 1);
 
 	--primary: rgba(80,40,160,1);
-	--accent: rgba(51, 102, 153, 1);
+	--accent: white;
 	--background_light: rgba(255, 255, 255, 1);
 	--background_dark: rgba(76, 84, 84, 1);
 }
@@ -75,7 +75,9 @@ header {
 	header {
 		display: block;
 		height: 130px;
-		position: relative;
+		position: -webkit-sticky; /* safari */
+		position: sticky;
+		top: 0;
 		color: white;
 		padding: 0.5rem 0;
 	}
@@ -194,7 +196,7 @@ header {
 #nav-primary li a.active,
 #nav-primary li a:hover,
 #nav-primary li a:focus {
-	background-color: var(--background_light);
+	background-color: var(--accent);
 	color: black;
 }
 
@@ -205,8 +207,9 @@ header {
 		position: absolute;
 		top: 100%;
 		right: 0;
-		height: 100vh;
+		height: calc(100vh - 130px); /* viewport - header height*/
 		width: 0;
+		padding: 0;
 		background-color: var(--headerbackground);
 		overflow-x: hidden;
 		z-index: 998;
