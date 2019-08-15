@@ -252,6 +252,11 @@ header {
 		-moz-transition: background-color 0.25s ease-out;
 	}	
 
+	#mobile-nav-button:hover,
+	#mobile-nav-button:focus {
+		background-color: rgba(60,30,120,1);
+	}
+
 	#mobile-nav-button .hamburger-container {
 		display: inline-block;
 		vertical-align: middle;
