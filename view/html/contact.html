@@ -84,6 +84,9 @@
 			</section>
 		</main>
 		<footer>
+			<button id="mobile-scroll-up-button" class="">
+				<div id="scroll-gfx"></div>
+			</button>
 			<div class="container">
 				<p>Anthony de Vellis &copy; <script>document.write(new Date().getFullYear());</script> | <a href="/contact">Contact</a></p>
 			</div>
@@ -94,48 +97,32 @@
 
 			})();
 
-			function nav_active() {
+			var side_nav = document.getElementById("nav-primary");
+				var menu_burger = document.getElementById("mobile-nav-button");
+				var menu_patty = document.getElementById("burger-patty");
+				var up_button = document.getElementById("mobile-scroll-up-button");
 
+				/* toggle menu */
+				menu_burger.addEventListener('click', function(e) {
+					e.preventDefault();
+					menu_burger.classList.toggle('open');
+					menu_patty.classList.toggle('open');
+					side_nav.classList.toggle('open');
+				});
 				
-				var navs = document.getElementById("navlinks").childNodes;
-				// every other object in this list is innertext, the odd numbers are elements
-				for ( let i = 1; i < navs.length; i += 2 ) {
-					navs.item(i).className.replace(" active", " inactive");
-				}
-
-				// this.className.replace(" inactive", " active");
-			}
-
-			function mobile_menu_toggle() {
-				let burger = document.getElementById("mobile-nav-button");
-				let side_nav = document.getElementById("nav-primary");
-				console.log(burger.classList);
-
-				if ( burger.classList.contains("open") ) { // close menu
-					burger.classList.remove("open");
-					burger.style["background-color"] = "rgba(80,40,160,1)";
-					side_nav.style["width"] = "0";
-					document.body.style["background-color"] = "white";
-				} else {	// open menu
-					burger.classList.add("open");
-					burger.style["background-color"] = "rgba(60,30,120,1)";
-					// check if we're in mobile mode
-					side_nav.style["width"] = "50vw";
-					// darken the rest of the screen
-					document.body.style["background-color"] = "rgba(0,0,0, 0.6)";
-				}
-			}
-			// reset navbar on resize so darkened overlay and navbar width return to normal
-			document.documentElement.addEventListener("resize", function() { 
-				if ( document.documentElement.clientWidth > 720 ) {
-					document.body.style["background-color"] = "white";
-					side_nav.style["width"] = "100%";
-				}
-			});
-			// implement onResize event listener
-
-			function submit_quote() {
-				alert("Form submitted");
-			}
+				// display up-button when scrolled down sufficiently
+				// TODO test with screen reader
+				window.addEventListener("scroll", function(e) {
+					console.log('scroll event');
+					if ( window.pageYOffset > 300 ) {
+						up_button.style.display = "inline-block";
+					} else {
+						up_button.style.display = "none";
+					}
+				});
+				// scroll to top when up-button is clicked
+				up_button.addEventListener("click", function(e) {
+					window.scrollTo(0, 0);
+				});
 		</script>
 	</body>
