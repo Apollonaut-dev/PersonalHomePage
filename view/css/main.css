@@ -349,7 +349,6 @@ section {
 
 	#mobile-scroll-up-button:hover,
 	#mobile-scroll-up-button:focus {
-		color: black;
 		background: none;
 		border: 3px solid var(--primary);
 		opacity: 1;
@@ -366,11 +365,10 @@ section {
 		top: 50%;
 		transform: translateX(50%) translateY(-50%);
 		vertical-align: middle;
-		background: white;
 		height: 2rem;
 		width: 4px;
-		background: black;
 		border-radius: 4px;
+		background: grey;
 	}
 
 	#mobile-scroll-up-button #scroll-gfx::before {
