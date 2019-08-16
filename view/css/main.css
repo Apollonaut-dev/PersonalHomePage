@@ -25,7 +25,7 @@
 }
 /* TODO fix for specific elements, consider adding 'focusable' class*/
 *:focus {
-	outline: thin dotted;
+	outline: thin dotted !important;
 }
 
 html {
@@ -217,6 +217,10 @@ header {
 		-moz-transition: width 0.25s ease-out;
 	}
 
+	#nav-primary.open {
+		width: 50vw;
+	}
+
 	#nav-primary ul {
 		display: block;
 		width: 100%;
@@ -237,33 +241,66 @@ header {
 		font-size: 1rem 0;
 	}
 
-	/* hamburger menu button */
-	#mobile-nav-button {
-		display: inline-block;
-		background-color: rgba(80,40,160,1);
-		border: 1px black;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 2rem;
-		width: 4rem;
-		vertical-align: middle;
-		transition: background-color 0.25s ease-out;
-		-moz-transition: background-color 0.25s ease-out;
+	#nav-primary li a.active,
+	#nav-primary li a:hover,
+	#nav-primary li a:focus {
+		background-color: var(--accent);
+		color: black;
 	}	
 
-	#mobile-nav-button .hamburger-container {
+	#mobile-nav-button {
+		background: rgba(80,40,160,1);
+		border: none;
 		display: inline-block;
-		vertical-align: middle;
-		width: 100%;
+		height: 3rem;
+		width: 3rem;
+		padding: 0.5rem;
+		position: absolute;
+		/* vertical centering trick */
+		top: 50%; /* 50% of parent */
+		transform: translateY(-50%); /* 50% of self */
+		right: 1rem;
+		cursor: pointer;	
+		transition: background-color 0.25s;
 	}
 
-	#mobile-nav-button .hamburger-container span {
-		outline: none;
+	#mobile-nav-button:focus,
+	#mobile-nav-button:hover,
+	#mobile-nav-button.open {
+		background-color: rgba(60,30,120,1);
+	}
+
+	/* menu burger icon */
+	#burger-patty,
+	#burger-patty::before,
+	#burger-patty::after {
+		content: '';
 		display: block;
-		border: 0.15rem solid white;
-		border-radius: 0.2rem;
-		margin: 0.75rem 0.5rem;
+		height: 3px;
+		width: 100%;
+		background: white;
+		border-radius: 3px;
+		transition: all 0.25s;
+	}
+
+	#burger-patty::before {
+		transform: translateY(-11px);
+	}
+
+	#burger-patty::after {
+		transform: translateY(8px);
+	}
+	/* post-animation states for burger patties */
+	#burger-patty.open {
+		transform: rotate(45deg);
+	}
+
+	#burger-patty.open::before {
+		transform: initial; /* this makes it look like the top patty folds into the center patty */
+	}
+	/* rotate and center to make an X */
+	#burger-patty.open::after {
+		transform: rotate(-90deg) translateX(2.5px) translateY(-1px);
 	}
 }
 
@@ -288,6 +325,63 @@ section {
 	display: block;
 	background-color: white;
 	padding: 2rem 2rem;
+}
+
+#mobile-scroll-up-button {
+	display: none;
+}
+
+@media screen and (max-width: 720px) {
+	#mobile-scroll-up-button {
+		display: hidden; /*initial, check JS scroll event listener*/
+		position: fixed;
+		bottom: 4rem;
+		right: 2rem;
+		width: 4rem;
+		height: 4rem;
+		background: var(--primary);
+		border: none;
+		border-radius: 2.8rem;
+		opacity: 0.25;
+		cursor: pointer;
+		transition: all 0.1s linear;
+	}
+
+	#mobile-scroll-up-button:hover,
+	#mobile-scroll-up-button:focus {
+		color: black;
+		background: none;
+		border: 3px solid var(--primary);
+		opacity: 1;
+	}
+
+	#mobile-scroll-up-button #scroll-gfx,
+	#mobile-scroll-up-button #scroll-gfx::before,
+	#mobile-scroll-up-button #scroll-gfx::after {
+		content: '';
+		display: block;
+		position: absolute;
+		/* centering trick */
+		right: 50%;
+		top: 50%;
+		transform: translateX(50%) translateY(-50%);
+		vertical-align: middle;
+		background: white;
+		height: 2rem;
+		width: 4px;
+		background: black;
+		border-radius: 4px;
+	}
+
+	#mobile-scroll-up-button #scroll-gfx::before {
+		height: 1rem;
+		transform: translateX(-4px) translateY(-1rem) rotate(45deg);
+	}
+
+	#mobile-scroll-up-button #scroll-gfx::after {
+		height: 1rem;
+		transform: translateX(8px) translateY(-1rem) rotate(-45deg); /* 9 = 5 + 4 */
+	}
 }
 
 footer {
